@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Dashboard · DRIVEResearch</title>
+  <meta name="description" content="DRIVEResearch live naturalistic driving dataset statistics and ODD labeling dashboard.">
+  <link rel="icon" href="https://driveresearch.tech/images/logo-square.png" type="image/png">
+  <link rel="canonical" href="https://data.driveresearch.tech/">
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #0f1923; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Noto Sans SC', sans-serif; }
+    iframe { border: 0; width: 100%; height: 100%; display: block; }
+    #loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: #faf9f5; pointer-events: none; z-index: 1; }
+    #loading .spinner { width: 36px; height: 36px; border: 3px solid rgba(255,255,255,0.15); border-top-color: #c85a3a; border-radius: 50%; animation: spin 0.9s linear infinite; }
+    #loading span { margin-left: 12px; font-size: 14px; letter-spacing: 0.5px; opacity: 0.8; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    iframe.ready + #loading { display: none; }
+  </style>
+</head>
+<body>
+  <iframe
+    id="dash"
+    src="https://driveresearchdata.streamlit.app/?embed=true&embed_options=show_toolbar,light_theme&utm_source=driveresearch.tech"
+    title="DRIVEResearch Live Dashboard"
+    allow="fullscreen"
+    onload="this.classList.add('ready')"></iframe>
+  <div id="loading"><div class="spinner"></div><span>Loading live dashboard…</span></div>
+  <script>
+    // Fallback: if iframe fails to load within 15s, redirect directly
+    setTimeout(function () {
+      var f = document.getElementById('dash');
+      if (!f.classList.contains('ready')) {
+        window.location.replace('https://driveresearchdata.streamlit.app/');
+      }
+    }, 15000);
+  </script>
+</body>
+</html>
