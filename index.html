@@ -20,7 +20,7 @@
 <body>
   <iframe
     id="dash"
-    src="https://driveresearchdata.streamlit.app/?embed=true&embed_options=show_toolbar,light_theme&utm_source=driveresearch.tech"
+    src="https://driveresearch-data.streamlit.app/?embed=true&embed_options=show_toolbar,light_theme&utm_source=driveresearch.tech"
     title="DRIVEResearch Live Dashboard"
     allow="fullscreen"
     onload="this.classList.add('ready')"></iframe>
@@ -30,7 +30,7 @@
     setTimeout(function () {
       var f = document.getElementById('dash');
       if (!f.classList.contains('ready')) {
-        window.location.replace('https://driveresearchdata.streamlit.app/');
+        window.location.replace('https://driveresearch-data.streamlit.app/');
       }
     }, 15000);
   </script>
