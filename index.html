@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Dashboard · DRIVEResearch</title>
-  <meta name="description" content="DRIVEResearch live naturalistic driving dataset statistics and ODD labeling dashboard.">
+  <title>NDS Statistics Platform · DRIVEResearch</title>
+  <meta name="description" content="DRIVEResearch naturalistic driving dataset statistics dashboard — city, road type, time-of-day and ODD-tag coverage.">
   <link rel="icon" href="https://driveresearch.tech/images/logo-square.png" type="image/png">
   <link rel="canonical" href="https://data.driveresearch.tech/">
   <style>
@@ -20,8 +20,8 @@
 <body>
   <iframe
     id="dash"
-    src="https://driveresearch-data.streamlit.app/?embed=true&embed_options=show_toolbar,light_theme&utm_source=driveresearch.tech"
-    title="DRIVEResearch Live Dashboard"
+    src="https://autozyx-nds-statistics-platform.hf.space/?embed=true&embed_options=show_toolbar,light_theme&utm_source=driveresearch.tech"
+    title="DRIVEResearch NDS Statistics Platform"
     allow="fullscreen"
     onload="this.classList.add('ready')"></iframe>
   <div id="loading"><div class="spinner"></div><span>Loading live dashboard…</span></div>
@@ -30,7 +30,7 @@
     setTimeout(function () {
       var f = document.getElementById('dash');
       if (!f.classList.contains('ready')) {
-        window.location.replace('https://driveresearch-data.streamlit.app/');
+        window.location.replace('https://huggingface.co/spaces/AutoZYX/nds-statistics-platform');
       }
     }, 15000);
   </script>
