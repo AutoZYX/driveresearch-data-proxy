@@ -26,11 +26,11 @@
     onload="this.classList.add('ready')"></iframe>
   <div id="loading"><div class="spinner"></div><span>Loading live dashboard…</span></div>
   <script>
-    // Fallback: if iframe fails to load within 15s, redirect directly
+    // Fallback: if iframe fails to load within 15s, redirect to the bare app.
     setTimeout(function () {
       var f = document.getElementById('dash');
       if (!f.classList.contains('ready')) {
-        window.location.replace('https://huggingface.co/spaces/AutoZYX/nds-statistics-platform');
+        window.location.replace('https://autozyx-nds-statistics-platform.hf.space/');
       }
     }, 15000);
   </script>
